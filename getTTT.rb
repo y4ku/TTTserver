@@ -1,11 +1,9 @@
 require 'java'
 java_import "java.util.HashMap"
 require './jkserve.jar'
-load './TTT/boardtdd.rb'
-load './TTT/rulestdd.rb'
-load './TTT/playertdd.rb'
-load './TTT/aitdd.rb'
-
+require 'rubygems'
+require 'ttt'
+s
 import 'ResponseType'
 import 'HTTPServer'
 import 'HTTPResponse'
@@ -35,6 +33,7 @@ class GetTTT
             return printBoardString("Draw!")
           end
           @rules.board.placeMove(@ai.getMove, @ai.marker)
+
           if(@ai.marker == @rules.whoWon)
             return printBoardString("Your Lose!")
           elsif(@rules.isFull?)
